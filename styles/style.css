@@ -15,7 +15,7 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  padding: 0 10px;
+  padding: 0px 10px;
 }
 
 .header {
@@ -24,8 +24,10 @@
   gap: 56px;
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content min-content;
+  min-height: 668px;
   margin-bottom: 40px;
-  height: 100vh;
+
+  block-size: min(100vh, 668px);
 }
 
 .decorated-zone::before {
@@ -195,6 +197,9 @@
   border-bottom: 1px solid var(--main-text-color, #f1b2ce);
 }
 
+.main-section .main-section-image {
+  width: 100%;
+}
 .main-section-image {
   display: grid;
   grid-template-columns: 1fr;
@@ -202,6 +207,10 @@
   gap: 10px;
   width: 100%;
   margin-bottom: 40px;
+}
+
+.section-image {
+  width: 100%;
 }
 
 .image-item {
@@ -212,12 +221,12 @@
 }
 
 .footer {
+  block-size: min(100vh, 668px);
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  min-height: 667px;
+  align-items: center;
 }
 
 .footer-text {
@@ -225,7 +234,6 @@
   color: var(--accent-color, #db00ff);
   font-weight: var(--bold-font-weight, 700);
   line-height: 82.5%;
-  align-self: center;
   text-shadow: 2px 2px 0px var(--accent-shadow-color, #ff0070);
 }
 
@@ -252,11 +260,12 @@
 
 @media (width >= 768px) {
   .page {
-    padding: 0 20px;
+    padding: 0px 20px;
   }
 
   .header {
-    margin-bottom: 243px;
+    block-size: min(100vh, 1024px);
+    margin-bottom: 261px;
   }
 
   .rec-element {
@@ -326,8 +335,6 @@
     margin-bottom: 20px;
   }
 
-  /*  ------------ */
-
   .main-section-image {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -341,7 +348,7 @@
   }
 
   .section-image {
-    margin: 0;
+    margin: 0px;
   }
 
   .image-item {
@@ -375,12 +382,11 @@
   }
 
   .footer {
-    height: 100vh;
+    block-size: min(100vh, 1024px);
   }
-
   .footer-text {
     font-size: 120px;
-    text-align: center;
+    margin-top: 195px;
   }
 
   .footer-decorated-zone::before {
@@ -389,16 +395,18 @@
 
   .footer-decorated-zone::after {
     top: 979px;
+    left: 0px;
   }
 }
 
 @media (width >= 1024px) {
   .page {
-    padding: 0 20px;
+    padding: 0px 20px;
   }
 
   .header {
-    margin-bottom: 193px;
+    block-size: min(100vh, 768px);
+    margin-bottom: 60px;
   }
 
   .rec-element {
@@ -498,7 +506,7 @@
     grid-auto-flow: dense;
     min-width: 984px;
     min-height: 1048px;
-    margin-top: 18px;
+    margin-top: 20px;
     margin-bottom: 60px;
   }
 
@@ -534,10 +542,6 @@
     grid-row: 3 / 4;
   }
 
-  .footer {
-    height: 1024px;
-  }
-
   .footer-text {
     font-size: 157px;
     margin-bottom: 250px;
@@ -551,4 +555,3 @@
     top: 725px;
   }
 }
-
